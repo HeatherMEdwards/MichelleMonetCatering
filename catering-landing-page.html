@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michelle Monet Catering - Artisanal Breads, French Pastries & Mexican Classics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1a1a1a;
+            --secondary: #c9a47a;
+            --accent: #8b7355;
+            --light: #f8f5f0;
+            --white: #ffffff;
+            --shadow: rgba(0, 0, 0, 0.1);
+            --contact-banner: #2c2c2c;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--primary);
+            background-color: var(--light);
+        }
+
+        h1, h2, h3, .section-title {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .header {
+            background: var(--white);
+            color: var(--primary);
+            padding: 1rem 1rem;
+            text-align: center;
+            box-shadow: 0 2px 8px var(--shadow);
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            color: var(--accent);
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .hero-section {
+            position: relative;
+            width: 100%;
+            height: 333px;
+            overflow: hidden;
+        }
+
+        .hero-section img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 7rem;
+            color: var(--white);
+            text-align: center;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+            padding: 0 1rem;
+            line-height: 1.2;
+        }
+
+        @media (max-width: 639px) {
+            .hero-section {
+                height: 267px;
+            }
+            .hero-title {
+                font-size: 3.5rem;
+                letter-spacing: 1px;
+            }
+        }
+
+        @media (min-width: 640px) and (max-width: 1023px) {
+            .hero-title {
+                font-size: 5rem;
+            }
+        }
+
+        .hero-image {
+            width: 100%;
+            max-height: 500px;
+            object-fit: cover;
+            display: block;
+            box-shadow: 0 4px 12px var(--shadow);
+        }
+
+        .whatsapp-banner {
+            background: var(--contact-banner);
+            color: var(--white);
+            padding: 1rem 1rem;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            border-bottom: 1px solid var(--secondary);
+        }
+
+        .whatsapp-banner a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            letter-spacing: 0.5px;
+        }
+
+        .whatsapp-icon {
+            width: 30px;
+            height: 30px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        .intro {
+            text-align: center;
+            padding: 2rem 1rem;
+            background: var(--white);
+            margin: 1rem 0;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px var(--shadow);
+        }
+
+        .intro h2 {
+            color: var(--accent);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .intro p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .section {
+            margin: 2rem 0;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+            text-align: center;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--secondary);
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 640px) {
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .gallery {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .gallery-item {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-item-caption {
+            padding: 1rem;
+            text-align: center;
+            font-size: 0.95rem;
+            color: #666;
+            font-style: italic;
+        }
+
+        .services {
+            background: var(--white);
+            padding: 2rem 1rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px var(--shadow);
+            margin: 2rem 0;
+        }
+
+        .service-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .service-item {
+            padding: 1rem;
+            margin: 0.5rem 0;
+            background: var(--light);
+            border-left: 4px solid var(--secondary);
+            border-radius: 6px;
+            font-size: 1.1rem;
+        }
+
+        .service-item strong {
+            color: var(--accent);
+        }
+
+        .cta {
+            background: var(--white);
+            color: var(--primary);
+            padding: 3rem 1rem;
+            text-align: center;
+            margin: 2rem 0;
+            border-radius: 12px;
+            border: 1px solid var(--primary);
+        }
+
+        .cta h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--primary);
+            color: var(--white);
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .cta-button:hover {
+            background: var(--contact-banner);
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .footer {
+            background: var(--primary);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 3rem;
+        }
+
+        .footer p {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <div class="whatsapp-banner">
+        <a href="https://wa.me/5213314668654" target="_blank">
+            <svg class="whatsapp-icon" viewBox="0 0 32 32" fill="currentColor">
+                <path d="M16 0C7.164 0 0 7.163 0 16c0 2.828.736 5.482 2.02 7.791L.695 30.49l7.013-1.833A15.926 15.926 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333c-2.547 0-4.96-.714-7.013-1.953l-.502-.292-5.195 1.357 1.383-5.042-.32-.52A13.267 13.267 0 012.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333z"/>
+                <path d="M23.547 19.547c-.373-.187-2.213-1.093-2.56-1.213-.347-.133-.6-.187-.853.187-.253.36-.987 1.213-1.213 1.467-.227.253-.453.28-.827.093-2.013-1.013-3.333-1.813-4.667-4.107-.36-.613.36-.573 1.04-1.907.107-.253.053-.467-.027-.653-.08-.187-.853-2.053-1.173-2.813-.307-.747-.613-.64-.853-.653-.213-.013-.467-.013-.72-.013s-.667.093-1.013.467c-.347.373-1.333 1.307-1.333 3.173s1.36 3.68 1.547 3.933c.187.253 2.667 4.08 6.467 5.72 2.387 1.04 3.32 1.147 4.52.973 1.133-.173 2.213-.893 2.533-1.76.32-.867.32-1.613.227-1.76-.093-.16-.333-.253-.707-.44z"/>
+            </svg>
+            <span>WhatsApp: +52 1 33 1466 8654</span>
+        </a>
+    </div>
+
+    <header class="header">
+        <p>Artisanal Breads, French Pastries & Mexican Classics</p>
+    </header>
+
+    <div class="hero-section">
+        <img src="/mnt/user-data/uploads/1770775407567_D5BEE4F0-C29D-4F02-AB2A-3F3C79D2C400_1_201_a.jpeg" alt="Elegant chocolate cake with fresh berries">
+        <div class="hero-overlay">
+            <h1 class="hero-title">Michelle<br>Monet<br>Catering</h1>
+        </div>
+    </div>
+
+    <div class="container">
+        <section class="intro">
+            <h2>¡Bienvenido, Amigos!</h2>
+            <p>
+                Ofrecemos menús semanales y comida especial en Guadalajara, Zapopan, y Tlaquepaque. 
+                Contáctanos hoy para ordenar su comida favorita y descubrir nuevos favoritos.
+            </p>
+        </section>
+
+        <section class="services">
+            <h2 class="section-title">Nuestros Servicios</h2>
+            <ul class="service-list">
+                <li class="service-item">
+                    <strong>🎓 Graduaciones</strong> - Celebra tu logro con elegancia
+                </li>
+                <li class="service-item">
+                    <strong>🎂 Cumpleaños</strong> - Fiestas memorables para todas las edades
+                </li>
+                <li class="service-item">
+                    <strong>👑 Quinceañeras</strong> - Haz tu día especial inolvidable
+                </li>
+                <li class="service-item">
+                    <strong>🎄 Platillos Tradicionales</strong> - Bacalao, Tamales, Chiles en Nogada
+                </li>
+                <li class="service-item">
+                    <strong>🥐 Repostería Francesa</strong> - Pasteles y postres artesanales
+                </li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Repostería Francesa</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="/mnt/user-data/uploads/1770775375472_9CA710FA-2E64-46D5-BB4A-812A0D304D8E_1_201_a.jpeg" alt="Pasta fresca con hierbas">
+                    <div class="gallery-item-caption">Pasta Artesanal con Hierbas Frescas</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="/mnt/user-data/uploads/1770775375473_F155BA3A-DB79-4F12-99F1-5C12553E8363_1_201_a.jpeg" alt="Pastel de monster azul">
+                    <div class="gallery-item-caption">Pastel Temático Creativo</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="/mnt/user-data/uploads/1770775375474_259616E8-AFD5-4229-92C1-D106591BC722_1_201_a.jpeg" alt="Cookie yin yang">
+                    <div class="gallery-item-caption">Galletas Artesanales Yin Yang</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="/mnt/user-data/uploads/1770775375474_76786C6C-9CCC-48D9-81AB-EAD206019F6E_1_201_a.jpeg" alt="Tarta de limón">
+                    <div class="gallery-item-caption">Tarta de Limón con Granada</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="/mnt/user-data/uploads/1770775375474_40292BFD-8D48-4C6E-9869-32993A6EF506_1_201_a.jpeg" alt="Galletas linzer">
+                    <div class="gallery-item-caption">Galletas Linzer Tradicionales</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="/mnt/user-data/uploads/1770775375474_25F21B65-4AA3-48F4-B2B2-2DD2B212BE56_1_201_a.jpeg" alt="Pan artesanal decorado">
+                    <div class="gallery-item-caption">Pan Artesanal con Decoración Única</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Panes y Delicias Artesanales</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="/mnt/user-data/uploads/1770775375475_2390B5B6-B5D8-4306-871D-754B031BC06E_1_201_a.jpeg" alt="Pan artesanal">
+                    <div class="gallery-item-caption">Pan Artesanal Recién Horneado</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="/mnt/user-data/uploads/1770775375475_166A82F7-DC05-4AC7-8AB8-A41024C1AC09_1_201_a.jpeg" alt="Bruschetta">
+                    <div class="gallery-item-caption">Bruschetta Caprese Gourmet</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="/mnt/user-data/uploads/1770775407566_866A8F93-AE85-44F9-AD28-4EF6A4BD1290_1_201_a.jpeg" alt="Niña cocinando">
+                    <div class="gallery-item-caption">Clases de Cocina para Niños</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="/mnt/user-data/uploads/1770775407567_D5BEE4F0-C29D-4F02-AB2A-3F3C79D2C400_1_201_a.jpeg" alt="Pastel de chocolate">
+                    <div class="gallery-item-caption">Pastel de Chocolate con Frutos del Bosque</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <h2>¿Listo para tu Evento Especial?</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 1rem; color: #555;">
+                Contáctanos hoy mismo y cotiza tu evento
+            </p>
+            <a href="https://wa.me/5213314668654?text=Hola,%20me%20interesa%20cotizar%20un%20evento" class="cta-button" target="_blank">
+                Cotizar por WhatsApp
+            </a>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">¿Por Qué Elegirnos?</h2>
+            <div class="services">
+                <p style="font-size: 1.1rem; line-height: 2; color: #555;">
+                    Ingredientes de primera calidad • Recetas auténticas francesas y mexicanas • Presentación elegante y profesional • Puntualidad garantizada • Atención personalizada para cada evento • Servicio en Guadalajara, Zapopan, y alrededores
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <h3 style="margin-bottom: 1rem;">Michelle Monet Catering</h3>
+        <p>📍 Guadalajara, Jalisco, México</p>
+        <p>📱 WhatsApp: +52 1 33 1466 8654</p>
+        <p style="margin-top: 1.5rem; font-size: 0.9rem;">
+            © 2026 Michelle Monet Catering. Todos los derechos reservados.
+        </p>
+    </footer>
+</body>
+</html>

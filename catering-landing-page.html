@@ -3,7 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Michelle Monet Catering - Artisanal Breads, French Pastries & Mexican Classics</title>
+    <title>Michelle Monet Catering - Panes Artesanales, Pastelería Francesa y Clásicos Mexicanos | Guadalajara</title>
+    <meta name="description" content="Catering en Guadalajara, Zapopan y Tlaquepaque. Menús semanales, entradas, guisados, postres y panes artesanales con ingredientes de alta calidad. Cotiza tu evento por WhatsApp.">
+    <meta name="keywords" content="catering Guadalajara, pan artesanal, pastelería francesa, comida para eventos, menús semanales, Zapopan, Tlaquepaque">
+    <meta name="author" content="Michelle Monet Catering">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://michellemonetcatering.com/">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_MX">
+    <meta property="og:title" content="Michelle Monet Catering - Panes Artesanales, Pastelería Francesa y Clásicos Mexicanos">
+    <meta property="og:description" content="Catering en Guadalajara, Zapopan y Tlaquepaque. Menús semanales, entradas, guisados, postres y panes artesanales. Cotiza tu evento por WhatsApp.">
+    <meta property="og:image" content="https://michellemonetcatering.com/img/hero-bread.png">
+    <meta property="og:url" content="https://michellemonetcatering.com/">
+    <meta property="og:site_name" content="Michelle Monet Catering">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Michelle Monet Catering - Panes Artesanales y Pastelería | Guadalajara">
+    <meta name="twitter:description" content="Catering en Guadalajara, Zapopan y Tlaquepaque. Menús semanales, postres y panes artesanales con ingredientes de alta calidad.">
+    <meta name="twitter:image" content="https://michellemonetcatering.com/img/hero-bread.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -35,33 +53,20 @@
             font-family: 'Cormorant Garamond', serif;
         }
 
-        .header {
-            background: var(--white);
-            color: var(--primary);
-            padding: 1rem 1rem;
-            text-align: center;
-            box-shadow: 0 2px 8px var(--shadow);
-            border-bottom: 1px solid #e0e0e0;
-        }
-
-        .header p {
-            font-size: 1.1rem;
-            color: var(--accent);
-            font-weight: 300;
-            letter-spacing: 1px;
-        }
-
         .hero-section {
             position: relative;
             width: 100%;
-            height: 333px;
+            min-height: 333px;
+            height: min(500px, 45vh);
             overflow: hidden;
+            border-bottom: 1px solid #000;
         }
 
         .hero-section img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: center 35%;
             display: block;
         }
 
@@ -71,37 +76,62 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.3);
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.45) 100%);
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
+            gap: 0.5rem;
         }
 
         .hero-title {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 7rem;
+            font-size: 4.04rem;
             color: var(--white);
             text-align: center;
             font-weight: 600;
             letter-spacing: 2px;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6), 6px 6px 20px rgba(0, 0, 0, 0.7), 0 0 40px rgba(0, 0, 0, 0.5);
             padding: 0 1rem;
             line-height: 1.2;
+            white-space: nowrap;
+            text-transform: uppercase;
+        }
+
+        .hero-tagline {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.95);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
         }
 
         @media (max-width: 639px) {
             .hero-section {
-                height: 267px;
+                min-height: 267px;
+                height: min(320px, 50vh);
             }
             .hero-title {
-                font-size: 3.5rem;
-                letter-spacing: 1px;
+                font-size: 1.85rem;
+                letter-spacing: 0.5px;
+                white-space: normal;
+                max-width: 90%;
+            }
+            .hero-tagline {
+                font-size: 0.75rem;
+                letter-spacing: 2px;
+                padding: 0 1rem;
             }
         }
 
         @media (min-width: 640px) and (max-width: 1023px) {
             .hero-title {
-                font-size: 5rem;
+                font-size: 2.83rem;
+            }
+            .hero-tagline {
+                font-size: 1rem;
             }
         }
 
@@ -113,33 +143,46 @@
             box-shadow: 0 4px 12px var(--shadow);
         }
 
-        .whatsapp-banner {
+        .contact-banner {
             background: var(--contact-banner);
             color: var(--white);
-            padding: 1rem 1rem;
-            text-align: center;
+            padding: 0.75rem 1rem;
             position: sticky;
             top: 0;
             z-index: 100;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-            border-bottom: 1px solid var(--secondary);
+            border-bottom: 1px solid #000;
         }
 
-        .whatsapp-banner a {
-            color: var(--white);
-            text-decoration: none;
-            font-size: 1.1rem;
-            font-weight: 500;
+        .contact-banner-inner {
+            max-width: 1200px;
+            margin: 0 auto;
             display: flex;
+            flex-wrap: wrap;
             align-items: center;
             justify-content: center;
-            gap: 0.5rem;
-            letter-spacing: 0.5px;
+            gap: 1rem 1.5rem;
         }
 
-        .whatsapp-icon {
-            width: 30px;
-            height: 30px;
+        .contact-banner a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            letter-spacing: 0.5px;
+            transition: opacity 0.2s ease;
+        }
+
+        .contact-banner a:hover {
+            opacity: 0.9;
+        }
+
+        .contact-banner .contact-icon {
+            width: 24px;
+            height: 24px;
         }
 
         .container {
@@ -148,25 +191,40 @@
             padding: 1rem;
         }
 
-        .intro {
-            text-align: center;
-            padding: 2rem 1rem;
+        .welcome-services {
             background: var(--white);
+            padding: 2rem 1rem;
             margin: 1rem 0;
             border-radius: 12px;
             box-shadow: 0 4px 12px var(--shadow);
         }
 
-        .intro h2 {
-            color: var(--accent);
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
+        .welcome-services .section-head {
+            text-align: center;
+            margin-bottom: 1.25rem;
         }
 
-        .intro p {
-            font-size: 1.1rem;
-            line-height: 1.8;
+        .welcome-services .section-head h2 {
+            color: var(--accent);
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .welcome-services .welcome-text {
+            text-align: center;
+            font-size: 1.05rem;
+            line-height: 1.75;
             color: #555;
+            max-width: 640px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .welcome-services .services-lead {
+            text-align: center;
+            color: #555;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            line-height: 1.5;
         }
 
         .section {
@@ -178,8 +236,6 @@
             color: var(--accent);
             margin-bottom: 1.5rem;
             text-align: center;
-            padding-bottom: 0.5rem;
-            border-bottom: 3px solid var(--secondary);
         }
 
         .gallery {
@@ -225,33 +281,51 @@
             text-align: center;
             font-size: 0.95rem;
             color: #666;
-            font-style: italic;
         }
 
-        .services {
-            background: var(--white);
-            padding: 2rem 1rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px var(--shadow);
-            margin: 2rem 0;
+        .welcome-services .service-list {
+            margin-top: 0;
         }
 
         .service-list {
             list-style: none;
             padding: 0;
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: 1fr;
+        }
+
+        @media (min-width: 640px) {
+            .service-list {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         .service-item {
-            padding: 1rem;
-            margin: 0.5rem 0;
+            padding: 1.25rem 1.25rem 1.25rem 1.25rem;
             background: var(--light);
             border-left: 4px solid var(--secondary);
-            border-radius: 6px;
-            font-size: 1.1rem;
+            border-radius: 8px;
+            font-size: 1.05rem;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .service-item:hover {
+            transform: translateX(4px);
+            box-shadow: 0 4px 12px var(--shadow);
         }
 
         .service-item strong {
+            display: block;
             color: var(--accent);
+            margin-bottom: 0.35rem;
+            font-size: 1.15rem;
+        }
+
+        .service-item span {
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.5;
         }
 
         .cta {
@@ -301,118 +375,151 @@
         .footer p {
             opacity: 0.9;
         }
+
+        .footer a {
+            color: inherit;
+            text-decoration: underline;
+        }
+
+        .footer a:hover {
+            opacity: 0.9;
+        }
     </style>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FoodEstablishment",
+        "name": "Michelle Monet Catering",
+        "description": "Catering en Guadalajara, Zapopan y Tlaquepaque. Menús semanales, entradas, guisados, postres y panes artesanales con ingredientes de alta calidad.",
+        "url": "https://michellemonetcatering.com/",
+        "image": "https://michellemonetcatering.com/img/hero-bread.png",
+        "areaServed": [
+            { "@type": "City", "name": "Guadalajara", "containedInPlace": { "@type": "State", "name": "Jalisco" } },
+            { "@type": "City", "name": "Zapopan" },
+            { "@type": "City", "name": "Tlaquepaque" }
+        ],
+        "servesCuisine": ["French", "Mexican", "Artisan breads", "Pastries"],
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+52-33-1466-8654",
+            "contactType": "customer service",
+            "areaServed": "MX",
+            "availableLanguage": "Spanish"
+        },
+        "sameAs": [
+            "https://instagram.com/michellemonetcatering"
+        ]
+    }
+    </script>
 </head>
 <body>
-    <div class="whatsapp-banner">
-        <a href="https://wa.me/5213314668654" target="_blank">
-            <svg class="whatsapp-icon" viewBox="0 0 32 32" fill="currentColor">
-                <path d="M16 0C7.164 0 0 7.163 0 16c0 2.828.736 5.482 2.02 7.791L.695 30.49l7.013-1.833A15.926 15.926 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333c-2.547 0-4.96-.714-7.013-1.953l-.502-.292-5.195 1.357 1.383-5.042-.32-.52A13.267 13.267 0 012.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333z"/>
-                <path d="M23.547 19.547c-.373-.187-2.213-1.093-2.56-1.213-.347-.133-.6-.187-.853.187-.253.36-.987 1.213-1.213 1.467-.227.253-.453.28-.827.093-2.013-1.013-3.333-1.813-4.667-4.107-.36-.613.36-.573 1.04-1.907.107-.253.053-.467-.027-.653-.08-.187-.853-2.053-1.173-2.813-.307-.747-.613-.64-.853-.653-.213-.013-.467-.013-.72-.013s-.667.093-1.013.467c-.347.373-1.333 1.307-1.333 3.173s1.36 3.68 1.547 3.933c.187.253 2.667 4.08 6.467 5.72 2.387 1.04 3.32 1.147 4.52.973 1.133-.173 2.213-.893 2.533-1.76.32-.867.32-1.613.227-1.76-.093-.16-.333-.253-.707-.44z"/>
-            </svg>
-            <span>WhatsApp: +52 1 33 1466 8654</span>
-        </a>
-    </div>
-
-    <header class="header">
-        <p>Artisanal Breads, French Pastries & Mexican Classics</p>
-    </header>
-
-    <div class="hero-section">
-        <img src="D5BEE4F0-C29D-4F02-AB2A-3F3C79D2C400_1_201_a.jpeg" alt="Elegant chocolate cake with fresh berries">
-        <div class="hero-overlay">
-            <h1 class="hero-title">Michelle<br>Monet<br>Catering</h1>
+    <div class="contact-banner">
+        <div class="contact-banner-inner">
+            <a href="https://wa.me/523314668654" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                <svg class="contact-icon" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+                    <path d="M16 0C7.164 0 0 7.163 0 16c0 2.828.736 5.482 2.02 7.791L.695 30.49l7.013-1.833A15.926 15.926 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333c-2.547 0-4.96-.714-7.013-1.953l-.502-.292-5.195 1.357 1.383-5.042-.32-.52A13.267 13.267 0 012.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333z"/>
+                    <path d="M23.547 19.547c-.373-.187-2.213-1.093-2.56-1.213-.347-.133-.6-.187-.853.187-.253.36-.987 1.213-1.213 1.467-.227.253-.453.28-.827.093-2.013-1.013-3.333-1.813-4.667-4.107-.36-.613.36-.573 1.04-1.907.107-.253.053-.467-.027-.653-.08-.187-.853-2.053-1.173-2.813-.307-.747-.613-.64-.853-.653-.213-.013-.467-.013-.72-.013s-.667.093-1.013.467c-.347.373-1.333 1.307-1.333 3.173s1.36 3.68 1.547 3.933c.187.253 2.667 4.08 6.467 5.72 2.387 1.04 3.32 1.147 4.52.973 1.133-.173 2.213-.893 2.533-1.76.32-.867.32-1.613.227-1.76-.093-.16-.333-.253-.707-.44z"/>
+                </svg>
+                <span>WhatsApp: +52 33 1466 8654</span>
+            </a>
+            <a href="https://instagram.com/michellemonetcatering" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                </svg>
+                <span>Instagram</span>
+            </a>
         </div>
     </div>
 
-    <div class="container">
-        <section class="intro">
-            <h2>¡Bienvenido, Amigos!</h2>
-            <p>
-                Ofrecemos menús semanales y comida especial en Guadalajara, Zapopan, y Tlaquepaque. 
-                Contáctanos hoy para ordenar su comida favorita y descubrir nuevos favoritos.
-            </p>
-        </section>
+    <div class="hero-section">
+        <img src="img/hero-bread.png" alt="Panes artesanales recién horneados - Michelle Monet Catering Guadalajara" fetchpriority="high" loading="eager" decoding="async">
+        <div class="hero-overlay">
+            <h1 class="hero-title">Michelle Monet Catering</h1>
+            <p class="hero-tagline">Artisanal Breads · French Pastries · Mexican Classics</p>
+        </div>
+    </div>
 
-        <section class="services">
-            <h2 class="section-title">Nuestros Servicios</h2>
+    <main class="container">
+        <section class="welcome-services" aria-labelledby="welcome-heading">
+            <div class="section-head">
+                <h2 id="welcome-heading">¡Bienvenido, Amigos!</h2>
+                <p class="welcome-text">
+                    Ofrecemos menús semanales y comida especial en Guadalajara, Zapopan y Tlaquepaque. Contáctanos para ordenar tu comida favorita y descubrir nuevos favoritos. <a href="https://instagram.com/michellemonetcatering" target="_blank" rel="noopener noreferrer">Síguenos en Instagram</a> para ver menús semanales y creaciones especiales.
+                </p>
+            </div>
+            <p class="services-lead">Desde entradas hasta postres, todo está hecho con ingredientes de alta calidad.</p>
             <ul class="service-list">
                 <li class="service-item">
-                    <strong>🎓 Graduaciones</strong> - Celebra tu logro con elegancia
+                    <strong>Entradas</strong>
+                    <span>Canapés, bruschettas y botanas para recibir a tus invitados.</span>
                 </li>
                 <li class="service-item">
-                    <strong>🎂 Cumpleaños</strong> - Fiestas memorables para todas las edades
+                    <strong>Guisados</strong>
+                    <span>Platos fuertes y guisados caseros para menús semanales y eventos.</span>
                 </li>
                 <li class="service-item">
-                    <strong>👑 Quinceañeras</strong> - Haz tu día especial inolvidable
+                    <strong>Postres</strong>
+                    <span>Pasteles, tartas, galletas y dulces artesanales.</span>
                 </li>
                 <li class="service-item">
-                    <strong>🎄 Platillos Tradicionales</strong> - Bacalao, Tamales, Chiles en Nogada
-                </li>
-                <li class="service-item">
-                    <strong>🥐 Repostería Francesa</strong> - Pasteles y postres artesanales
+                    <strong>Panes artesanales</strong>
+                    <span>Pan recién horneado, baguettes y especialidades de panadería.</span>
                 </li>
             </ul>
         </section>
 
         <section class="section">
-            <h2 class="section-title">Repostería Francesa</h2>
             <div class="gallery">
                 <div class="gallery-item">
-                    <img src="9CA710FA-2E64-46D5-BB4A-812A0D304D8E_1_201_a.jpeg" alt="Pasta fresca con hierbas">
+                    <img src="img/9CA710FA-2E64-46D5-BB4A-812A0D304D8E_1_201_a.jpeg" alt="Pasta artesanal con hierbas frescas - catering Michelle Monet">
                     <div class="gallery-item-caption">Pasta Artesanal con Hierbas Frescas</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="F155BA3A-DB79-4F12-99F1-5C12553E8363_1_201_a.jpeg" alt="Pastel de monster azul">
+                    <img src="img/F155BA3A-DB79-4F12-99F1-5C12553E8363_1_201_a.jpeg" alt="Pastel temático creativo - pastelería para eventos Guadalajara">
                     <div class="gallery-item-caption">Pastel Temático Creativo</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="259616E8-AFD5-4229-92C1-D106591BC722_1_201_a.jpeg" alt="Cookie yin yang">
-                    <div class="gallery-item-caption">Galletas Artesanales Yin Yang</div>
+                    <img src="img/259616E8-AFD5-4229-92C1-D106591BC722_1_201_a.jpeg" alt="Galletas artesanales - postres Michelle Monet Catering">
+                    <div class="gallery-item-caption">Galletas Artesanales</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="76786C6C-9CCC-48D9-81AB-EAD206019F6E_1_201_a.jpeg" alt="Tarta de limón">
+                    <img src="img/76786C6C-9CCC-48D9-81AB-EAD206019F6E_1_201_a.jpeg" alt="Tarta de limón con granada - postres artesanales Guadalajara">
                     <div class="gallery-item-caption">Tarta de Limón con Granada</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="40292BFD-8D48-4C6E-9869-32993A6EF506_1_201_a.jpeg" alt="Galletas linzer">
+                    <img src="img/40292BFD-8D48-4C6E-9869-32993A6EF506_1_201_a.jpeg" alt="Galletas Linzer tradicionales - pastelería francesa Michelle Monet">
                     <div class="gallery-item-caption">Galletas Linzer Tradicionales</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="25F21B65-4AA3-48F4-B2B2-2DD2B212BE56_1_201_a.jpeg" alt="Pan artesanal decorado">
-                    <div class="gallery-item-caption">Pan Artesanal con Decoración Única</div>
+                    <img src="img/25F21B65-4AA3-48F4-B2B2-2DD2B212BE56_1_201_a.jpeg" alt="Pan artesanal decorado - panadería Guadalajara Michelle Monet">
+                    <div class="gallery-item-caption">Pan Artesanal</div>
                 </div>
             </div>
         </section>
 
         <section class="section">
-            <h2 class="section-title">Panes y Delicias Artesanales</h2>
             <div class="gallery">
                 <div class="gallery-item">
-                    <img src="2390B5B6-B5D8-4306-871D-754B031BC06E_1_201_a.jpeg" alt="Pan artesanal">
+                    <img src="img/2390B5B6-B5D8-4306-871D-754B031BC06E_1_201_a.jpeg" alt="Pan artesanal recién horneado - catering Zapopan Tlaquepaque">
                     <div class="gallery-item-caption">Pan Artesanal Recién Horneado</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="166A82F7-DC05-4AC7-8AB8-A41024C1AC09_1_201_a.jpeg" alt="Bruschetta">
+                    <img src="img/166A82F7-DC05-4AC7-8AB8-A41024C1AC09_1_201_a.jpeg" alt="Bruschetta caprese gourmet - entradas para eventos">
                     <div class="gallery-item-caption">Bruschetta Caprese Gourmet</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="866A8F93-AE85-44F9-AD28-4EF6A4BD1290_1_201_a.jpeg" alt="Niña cocinando">
-                    <div class="gallery-item-caption">Clases de Cocina para Niños</div>
-                </div>
-                <div class="gallery-item">
-                    <img src="D5BEE4F0-C29D-4F02-AB2A-3F3C79D2C400_1_201_a.jpeg" alt="Pastel de chocolate">
+                    <img src="img/D5BEE4F0-C29D-4F02-AB2A-3F3C79D2C400_1_201_a.jpeg" alt="Pastel de chocolate con frutos del bosque - postres para eventos">
                     <div class="gallery-item-caption">Pastel de Chocolate con Frutos del Bosque</div>
                 </div>
             </div>
         </section>
 
         <section class="cta">
-            <h2>¿Listo para tu Evento Especial?</h2>
+            <h2>¿Listo para ordenar?</h2>
             <p style="font-size: 1.2rem; margin-bottom: 1rem; color: #555;">
                 Contáctanos hoy mismo y cotiza tu evento
             </p>
-            <a href="https://wa.me/5213314668654?text=Hola,%20me%20interesa%20cotizar%20un%20evento" class="cta-button" target="_blank">
+            <a href="https://wa.me/523314668654?text=Hola,%20me%20interesa%20cotizar%20un%20evento" class="cta-button" target="_blank" rel="noopener noreferrer">
                 Cotizar por WhatsApp
             </a>
         </section>
@@ -425,12 +532,12 @@
                 </p>
             </div>
         </section>
-    </div>
+    </main>
 
     <footer class="footer">
         <h3 style="margin-bottom: 1rem;">Michelle Monet Catering</h3>
         <p>📍 Guadalajara, Jalisco, México</p>
-        <p>📱 WhatsApp: +52 1 33 1466 8654</p>
+        <p>📱 <a href="https://wa.me/523314668654" target="_blank" rel="noopener noreferrer">WhatsApp: +52 33 1466 8654</a> · <a href="https://instagram.com/michellemonetcatering" target="_blank" rel="noopener noreferrer">Instagram</a></p>
         <p style="margin-top: 1.5rem; font-size: 0.9rem;">
             © 2026 Michelle Monet Catering. Todos los derechos reservados.
         </p>

@@ -254,11 +254,7 @@
             }
         }
 
-        @media (min-width: 1024px) {
-            .gallery {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
+        /* Kept at 2 columns on large screens so galleries with 4 or 2 items don't leave empty grid cells */
 
         .gallery-item {
             background: var(--white);

@@ -287,49 +287,45 @@
             color: #666;
         }
 
-        .welcome-services .service-list {
-            margin-top: 0;
-        }
-
-        .service-list {
-            list-style: none;
-            padding: 0;
+        .menu-categories {
             display: grid;
+            grid-template-columns: repeat(2, 1fr);
             gap: 1rem;
-            grid-template-columns: 1fr;
+            margin-top: 1.5rem;
         }
 
-        @media (min-width: 640px) {
-            .service-list {
-                grid-template-columns: repeat(2, 1fr);
+        @media (max-width: 639px) {
+            .menu-categories {
+                grid-template-columns: 1fr;
             }
         }
 
-        .service-item {
-            padding: 1.25rem 1.25rem 1.25rem 1.25rem;
+        .menu-category {
             background: var(--light);
-            border-left: 4px solid var(--secondary);
-            border-radius: 8px;
-            font-size: 1.05rem;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(201, 164, 122, 0.3);
         }
 
-        .service-item:hover {
-            transform: translateX(4px);
-            box-shadow: 0 4px 12px var(--shadow);
+        .menu-category:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
         }
 
-        .service-item strong {
-            display: block;
+        .menu-category h3 {
             color: var(--accent);
-            margin-bottom: 0.35rem;
-            font-size: 1.15rem;
+            font-size: 1.35rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
         }
 
-        .service-item span {
+        .menu-category p {
             color: #555;
             font-size: 0.95rem;
             line-height: 1.5;
+            margin: 0;
         }
 
         .cta {
@@ -452,24 +448,24 @@
                 </p>
             </div>
             <p class="services-lead">Desde entradas hasta postres, todo está hecho con ingredientes sanos de alta calidad y pasión por la gastronomía.</p>
-            <ul class="service-list">
-                <li class="service-item">
-                    <strong>Entradas</strong>
-                    <span>Humus, humus de betabel, tartas saladas, y sopas.</span>
-                </li>
-                <li class="service-item">
-                    <strong>Guisados</strong>
-                    <span>Platos fuertes y guisados caseros para menús semanales y eventos pequeños.</span>
-                </li>
-                <li class="service-item">
-                    <strong>Postres</strong>
-                    <span>Pasteles, tartas, galletas, y brownies.</span>
-                </li>
-                <li class="service-item">
-                    <strong>Panes artesanales</strong>
-                    <span>Pan recién horneado de masa madre y especialidades saladas y dulces.</span>
-                </li>
-            </ul>
+            <div class="menu-categories">
+                <div class="menu-category">
+                    <h3>Entradas</h3>
+                    <p>Humus, humus de betabel, tartas saladas, y sopas.</p>
+                </div>
+                <div class="menu-category">
+                    <h3>Guisados</h3>
+                    <p>Platos fuertes y guisados caseros para menús semanales y eventos pequeños.</p>
+                </div>
+                <div class="menu-category">
+                    <h3>Postres</h3>
+                    <p>Pasteles, tartas, galletas, y brownies.</p>
+                </div>
+                <div class="menu-category">
+                    <h3>Panes artesanales</h3>
+                    <p>Pan recién horneado de masa madre y especialidades saladas y dulces.</p>
+                </div>
+            </div>
         </section>
 
         <section class="section">
